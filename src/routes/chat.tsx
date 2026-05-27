@@ -128,16 +128,19 @@ function ChatPage() {
         <Conversation className="flex-1">
           <ConversationContent className="px-4 py-6 sm:px-6">
             {messages.length === 0 ? (
-              <ConversationEmptyState
-                icon={
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-gold shadow-soft">
-                    <img src={logo} alt="" className="h-9 w-9" />
-                  </div>
-                }
-                title="How can I help you today?"
-                description="Ask anything, or pick a starter prompt below."
-              >
-                <div className="mt-6 grid w-full max-w-xl gap-2 sm:grid-cols-2">
+              <ConversationEmptyState>
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-gold shadow-soft">
+                  <img src={logo} alt="" className="h-9 w-9" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="font-display text-lg font-semibold">
+                    How can I help you today?
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Ask anything, or pick a starter prompt below.
+                  </p>
+                </div>
+                <div className="mt-4 grid w-full max-w-xl gap-2 sm:grid-cols-2">
                   {SUGGESTIONS.map((s) => (
                     <button
                       key={s}
